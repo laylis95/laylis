@@ -7,14 +7,12 @@
 </head>
 <body>
   <canvas id="c"></canvas>
+  <div id="overlay">Loading…</div>
+  <div id="hud"></div>
+  <div id="help">W/S Throttle  ▲▼ Pitch  ◄► Roll  A/D Yaw  R Reset  H Help  O OrbitCam</div>
+  <div class="btn-box"><button id="reset">Reset</button></div>
 
-  <!-- Three.js core UMD -->
-  <script src="libs/three/build/three.min.js"></script>
-  <!-- OrbitControls (non-module build) -->
-  <script src="libs/three/examples/js/controls/OrbitControls.js"></script>
-  <!-- Ammo.js WASM -->
-  <script src="libs/ammo/builds/ammo.wasm.js"></script>
-  <!-- Ditt app-script -->
-  <script src="app.js"></script>
+  <!-- Endast ett script – din app körs som modul -->
+  <script type="module" src="./app.js"></script>
 </body>
 </html>
