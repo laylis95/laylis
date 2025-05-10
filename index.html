@@ -3,16 +3,27 @@
 <head>
   <meta charset="UTF-8">
   <title>Flygsimulator</title>
-  <style> body{margin:0;overflow:hidden;} </style>
+  <style>
+    :root { --panel:rgba(0,0,0,.65); --green:#0f0 }
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{background:#000;color:#fff;font:13px/1.4 system-ui,monospace;overflow:hidden}
+    canvas{display:block}
+    #hud{position:absolute;top:10px;left:10px;background:var(--panel);padding:8px 10px;border-radius:6px;color:var(--green);white-space:pre;z-index:10}
+    #help{position:absolute;right:10px;bottom:10px;background:var(--panel);padding:6px 10px;border-radius:6px;color:#ddd;z-index:10;font-size:12px}
+    #overlay{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,.92);font-size:22px;z-index:100}
+    .btn-box{position:absolute;top:10px;right:10px;z-index:10}
+    button{background:#4caf50;border:none;color:#fff;padding:6px 12px;border-radius:4px;cursor:pointer}
+    button:hover{background:#43a047}
+  </style>
 </head>
 <body>
   <canvas id="c"></canvas>
-  <div id="overlay">Loading…</div>
+  <div id="overlay">Loading Ultra-Flight Sim v4 (F152 Jet)…</div>
   <div id="hud"></div>
   <div id="help">W/S Throttle  ▲▼ Pitch  ◄► Roll  A/D Yaw  R Reset  H Help  O OrbitCam</div>
   <div class="btn-box"><button id="reset">Reset</button></div>
 
-  <!-- Endast ett script – din app körs som modul -->
+  <!-- ENDAST app.js som modul -->
   <script type="module" src="./app.js"></script>
 </body>
 </html>
